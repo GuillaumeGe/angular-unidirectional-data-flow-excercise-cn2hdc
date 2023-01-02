@@ -18,7 +18,7 @@ import { Car } from '../../types/car.type';
       <div><strong>{{car.make}} {{car.model}}</strong></div>
       <div>Color: {{car.color}}</div>
       <div>Number of doors: {{car.numberOfDoors}}</div>
-      <div><button (click)="this.increaseNumberOfDoors.emit(car.id)">Increase number of doors</button></div>
+      <div><button (click)="increaseNumberOfDoors.emit(car.id)">Increase number of doors</button></div>
       <hr>
     </div>
   `,

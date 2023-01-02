@@ -5,7 +5,7 @@ import { Car } from '../../types/car.type';
   selector: 'app-ctn-car-overview',
   template: `
     <h1>Car overview</h1>
-    <app-car-list [cars]="this.cars" (increaseNumberOfDoors)="this.onIncreaseNumberOfDoors($event)"></app-car-list>
+    <app-car-list [cars]="cars" (increaseNumberOfDoors)="onIncreaseNumberOfDoors($event)"></app-car-list>
   `,
 })
 export class CarOverviewContainer {
@@ -30,8 +30,7 @@ export class CarOverviewContainer {
 
   constructor() {}
 
-  onIncreaseNumberOfDoors(carId: string): void {
-    console.log('upgrade');
+  private onIncreaseNumberOfDoors(carId: string): void {
     // When the number of doors increased we make sure a new reference
     // is created for both the list and for the car.
     this.cars = this.cars.map((car: Car) => {
